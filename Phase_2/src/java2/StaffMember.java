@@ -68,7 +68,7 @@ public class StaffMember {
     }
 
     public String getFirstName() {
-        return Last_Name;
+        return First_Name;
     }
 
     public String getLastName() {
