@@ -6,8 +6,8 @@ public class Main {
 	public static void main(String[] args) {
 
 		try {
-	         Address a1 = new Address("Al_Ameer_Hassan", "Birzeit", "palistine");
-	         Address a2 = new Address("Al_Ameer_Hassan", "Birzeit", "palistine");
+	         Address a1 = new Address("AlAmeerHassan", "Birzeit", "palistine");
+	         Address a2 = new Address("kherba", "Birzeit", "palistine");
 	         Address[] arr = { a1, a2 };
 	         StaffMember m = new StaffMember("Mousa", "Saed", LocalDate.of(2007, 9, 3),
 	               "059447142", "abudayehmousa78@gmail.com", "Birzeit@gmail.com", "Birzeit");
