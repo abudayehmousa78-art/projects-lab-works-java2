@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		try {
-			ArrayList<StaffMember> list = new ArrayList<>();
+			ArrayList<Employee> list = new ArrayList<>();
 			list.add(new Employee("10", "mmm", "mousa", "saed", LocalDate.of(2007, 9, 3), "059447142",
 					"abudayehmousa78@gmail.com", "Birzeit@gmail.com", "Birzeit"));
 			list.add(new Employee("10", "mmm", "mousa", "saed", LocalDate.of(2007, 9, 3), "059447142",
@@ -31,22 +31,26 @@ public class Main {
 		}
 
 	}
-	public static void printList(ArrayList<StaffMember> list){
-		 for(int i = 0; i < list.size(); i++){
-			 System.out.println(list.get(i).toString());
-		 }
-	}
-	public static double totalPay(ArrayList<Employee> list){
-		double sum = 0;
-		for(int i = 0; i < list.size(); i++){
-			if(list.get(i) instanceof HourlyEmployee){
-				sum+=((HourlyEmployee)list.get(i)).getPay();
-			}else if(list.get(i) instanceof WeeklyEmployee){
-				sum+=((WeeklyEmployee)list.get(i)).getPay();
-			}
-		 }
-		return sum;
+
+	public static void printList(ArrayList<Employee> list) {
+
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println("Emplyee Info " + list.get(i).toString());
+			System.out.println("==================");
+
+		}
 	}
 
+	public static double totalPay(ArrayList<Employee> list) {
+		double sum = 0;
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i) instanceof HourlyEmployee) {
+				sum += ((HourlyEmployee) list.get(i)).getPay();
+			} else if (list.get(i) instanceof WeeklyEmployee) {
+				sum += ((WeeklyEmployee) list.get(i)).getPay();
+			}
+		}
+		return sum;
+	}
 
 }
