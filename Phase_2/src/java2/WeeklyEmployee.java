@@ -1,10 +1,14 @@
 package java2;
 
-public class WeeklyEmployee {
+import java.time.LocalDate;
+
+public class WeeklyEmployee extends Employee{
 	private byte noOfWeeks;
 	private float wagePerWeek;
 
-	public WeeklyEmployee(byte noOfWeeks, float wagePerWeek) {
+	public WeeklyEmployee(byte noOfWeeks, float wagePerWeek, String empNo, String departmentName, String First_Name, String Last_Name, LocalDate Date_of_Birth,
+            String Mobile_Number, String Personal_Email, String Work_Email, String Company_Name) {
+		super(empNo, departmentName, First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name);
 		setNoOfWeeks(noOfWeeks);
 		setWagePerWeek(wagePerWeek);
 	}
@@ -39,5 +43,8 @@ public class WeeklyEmployee {
 
 	public String toString() {
 		return "no of week is : " + noOfWeeks + "\nwage per week is : " + wagePerWeek;
+	}
+	public double getPay(){
+		return pay();
 	}
 }

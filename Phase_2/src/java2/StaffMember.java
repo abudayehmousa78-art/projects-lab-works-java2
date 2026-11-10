@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class StaffMember {
 
-	
+
 	private String First_Name;
     private String Last_Name;
-    private LocalDate Date_of_Birth;
+    protected static  LocalDate Date_of_Birth;
     private Address[] address;
     private String Mobile_Number;
     private String Personal_Email;
@@ -197,5 +197,5 @@ public class StaffMember {
     public void setAddress(Address[] address) {
         this.address = address;
     }
-	
+
 }

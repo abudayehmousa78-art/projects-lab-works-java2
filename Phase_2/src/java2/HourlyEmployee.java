@@ -1,10 +1,14 @@
 package java2;
 
-public class HourlyEmployee {
+import java.time.LocalDate;
+
+public class HourlyEmployee extends Employee{
 	private short hours;
 	private float rate;
 
-	public HourlyEmployee(short hours, float rate) {
+	public HourlyEmployee(short hours, float rate, String empNo, String departmentName, String First_Name, String Last_Name, LocalDate Date_of_Birth,
+            String Mobile_Number, String Personal_Email, String Work_Email, String Company_Name) {
+		super(empNo, departmentName, First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name);
 		setHours(hours);
 		setRate(rate);
 	}
@@ -47,5 +51,8 @@ public class HourlyEmployee {
 			Salary = rate * (hours + extra);
 		}
 		return Salary;
+	}
+	public double getPay(){
+		return pay();
 	}
 }
