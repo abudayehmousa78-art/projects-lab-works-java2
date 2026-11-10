@@ -36,17 +36,17 @@ public class Main {
 			 System.out.println(list.get(i).toString());
 		 }
 	}
-	public static double totalPay(ArrayList<Employee> list){
-		double sum = 0;
-		for(int i = 0; i < list.size(); i++){
-			if(list.get(i) instanceof HourlyEmployee){
-				sum+=((HourlyEmployee)list.get(i)).getPay();
-			}else if(list.get(i) instanceof WeeklyEmployee){
-				sum+=((WeeklyEmployee)list.get(i)).getPay();
-			}
-		 }
-		return sum;
-	}
+//	public static double totalPay(ArrayList<Employee> list){
+//		double sum = 0;
+//		for(int i = 0; i < list.size(); i++){
+//			if(list.get(i) instanceof HourlyEmployee){
+//				sum+=((HourlyEmployee)list.get(i)).getPay();
+//			}else if(list.get(i) instanceof WeeklyEmployee){
+//				sum+=((WeeklyEmployee)list.get(i)).getPay();
+//			}
+//		 }
+//		return sum;
+//	}
 
 
 }
