@@ -43,8 +43,13 @@ public class ContractEmployee extends Employee{
 		return monthlySalary;
 	}
 
+	@Override
 	public String toString() {
-		return "contractRate : " + contractRate + "\nnumberOmonth : " + numberOfMonths;
+		return super.toString() + "ContractEmployee [contractRate=" + contractRate + ", numberOfMonths=" + numberOfMonths + ", payment = " +pay()+ "]";
 	}
+
+	
+
+	
 
 }
