@@ -6,8 +6,8 @@ public class Volunteer extends StaffMember{
 	private String associationName;
 
 	public Volunteer(String associationName, String First_Name, String Last_Name, LocalDate Date_of_Birth,
-            String Mobile_Number, String Personal_Email, String Work_Email, String Company_Name) {
-		super(First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name);
+            String Mobile_Number, String Personal_Email, String Work_Email, String Company_Name, Address[] address) {
+		super(First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name, address);
 
 		setAssociationName(associationName);
 	}

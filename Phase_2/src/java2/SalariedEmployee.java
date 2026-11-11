@@ -6,8 +6,8 @@ public class SalariedEmployee extends Employee{
 	private double annualSalary;
 
 	public SalariedEmployee(double annualSalary, String empNo, String departmentName, String First_Name, String Last_Name, LocalDate Date_of_Birth,
-            String Mobile_Number, String Personal_Email, String Work_Email, String Company_Name) {
-		super(empNo, departmentName, First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name);
+            String Mobile_Number, String Personal_Email, String Work_Email, String Company_Name, Address[] address) {
+		super(empNo, departmentName, First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name, address);
 		setAnnualSalary(annualSalary);
 
 	}

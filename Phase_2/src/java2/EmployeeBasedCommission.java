@@ -7,8 +7,8 @@ public class EmployeeBasedCommission extends CommissionEmployee {
 	private double baseSalary;
 
 	public EmployeeBasedCommission(double baseSalary, double totalSales, double price, String empNo, String departmentName, String First_Name, String Last_Name,LocalDate Date_of_Birth, String Mobile_Number,
-	        String Personal_Email, String Work_Email, String Company_Name) {
-		super(baseSalary, totalSales, empNo, departmentName, First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name);
+	        String Personal_Email, String Work_Email, String Company_Name, Address[] address) {
+		super(baseSalary, totalSales, empNo, departmentName, First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name, address);
 		setBaseSalary(baseSalary);
 	}
 

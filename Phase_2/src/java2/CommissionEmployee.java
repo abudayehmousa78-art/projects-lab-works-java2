@@ -9,9 +9,9 @@ public class CommissionEmployee extends Employee {
 
 	public CommissionEmployee(double totalSales, double price, String empNo, String departmentName,
 			String First_Name, String Last_Name,LocalDate Date_of_Birth, String Mobile_Number,
-	        String Personal_Email, String Work_Email, String Company_Name) {
+	        String Personal_Email, String Work_Email, String Company_Name, Address[] address) {
 		
-		super(empNo, departmentName, First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name);
+		super(empNo, departmentName, First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name, address);
 		
 		setTotalSales(totalSales);
 		setPrice(price);

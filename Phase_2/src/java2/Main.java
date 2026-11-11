@@ -6,37 +6,25 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		
 
-		try {
-			ArrayList<Employee> list = new ArrayList<>();
-			list.add(new Employee("10", "mmm", "mousa", "saed", LocalDate.of(2007, 9, 3), "059447142",
-					"abudayehmousa78@gmail.com", "Birzeit@gmail.com", "Birzeit"));
-			list.add(new Employee("10", "mmm", "mousa", "saed", LocalDate.of(2007, 9, 3), "059447142",
-					"abudayehmousa78@gmail.com", "Birzeit@gmail.com", "Birzeit"));
-
-			printList(list);
-			Address a1 = new Address("AlAmeerHassan", "Birzeit", "palistine");
-			Address a2 = new Address("kherba", "Birzeit", "palistine");
-			Address[] arr = { a1, a2 };
-			StaffMember m = new StaffMember("Mousa", "Saed", LocalDate.of(2007, 9, 3), "059447142",
-					"abudayehmousa78@gmail.com", "Birzeit@gmail.com", "Birzeit");
-			m.setAddress(arr);
-			System.out.println(m.toString());
-			System.out.println("your password is : " + m.Password());
-			System.out.println(a1.toString());
-			System.out.println(a2.toString());
-
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		ArrayList<StaffMember> list = new ArrayList<>();
+		list.add(new HourlyEmployee((short)100, 21, "40", "mousa Debartment", "Mousa", "Saed", LocalDate.of(2007, 9, 3),
+				"059447142","abudayehmousa78@gmail.com", "Birzeit@gmail.com", "Birzeit", new Address[] {new Address("AlAmeerHassan", "Birzeit", "Palistine")}));
+		list.add(new HourlyEmployee((short)100, 10, "15", "yacoub Debartment", "Yacoub", "Saed", LocalDate.of(2008, 9, 3),
+				"059443442","ayacoub@gmail.com", "Birzeit@gmail.com", "Birzeit", new Address[] {new Address("AlHashmia", "Ramallah", "Palistine")}));
+		
+		
+		printList(list);
 
 	}
 
-	public static void printList(ArrayList<Employee> list) {
+	public static void printList(ArrayList<StaffMember> list) {
 
-		for (int i = 0; i < list.size(); i++) {
-			System.out.println("Emplyee Info " + list.get(i).toString());
-			System.out.println("==================");
+		for (StaffMember l : list) {
+			System.out.println("Staffmamber Info [ " + l.toString() + " ]");
+			System.out.println("====================================");
 
 		}
 	}

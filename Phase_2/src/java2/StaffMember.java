@@ -7,7 +7,7 @@ public class StaffMember {
 
 	private String First_Name;
     private String Last_Name;
-    protected static  LocalDate Date_of_Birth;
+    protected  LocalDate Date_of_Birth;
     private Address[] address;
     private String Mobile_Number;
     private String Personal_Email;
@@ -15,7 +15,7 @@ public class StaffMember {
     private String Company_Name;
 
     public StaffMember(String First_Name, String Last_Name, LocalDate Date_of_Birth,
-            String Mobile_Number, String Personal_Email, String Work_Email, String Company_Name) {
+            String Mobile_Number, String Personal_Email, String Work_Email, String Company_Name, Address[] address) {
 
         if (address != null) {
             this.address = new Address[address.length];
@@ -169,13 +169,17 @@ public class StaffMember {
 
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append("First name : ").append(First_Name);
+        s.append("\nFirst name : ").append(First_Name);
         s.append("\nLast name : ").append(Last_Name);
         s.append("\nDate : ").append(Date_of_Birth);
         s.append("\nMobile number : ").append(Mobile_Number);
         s.append("\nPersonal email : ").append(Personal_Email);
         s.append("\nWork email : ").append(Work_Email);
         s.append("\nCompany name : ").append(Company_Name);
+        s.append("\nAddress : ");
+        for (Address a : address) {
+            s.append(" ").append(a);
+        }
         return s.toString();
     }
 

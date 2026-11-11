@@ -49,7 +49,7 @@ public class Address {
     }
 
     public String toString() {
-        return "Street: " + Street + ", City: " + City + ", country: " + Country;
+        return "Address [street = " + Street + ", city = " + City + ", country = " + Country + "]";
     }
 
     private boolean isValid(String o){

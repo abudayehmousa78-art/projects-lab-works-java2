@@ -7,8 +7,8 @@ public class HourlyEmployee extends Employee{
 	private float rate;
 
 	public HourlyEmployee(short hours, float rate, String empNo, String departmentName, String First_Name, String Last_Name, LocalDate Date_of_Birth,
-            String Mobile_Number, String Personal_Email, String Work_Email, String Company_Name) {
-		super(empNo, departmentName, First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name);
+            String Mobile_Number, String Personal_Email, String Work_Email, String Company_Name, Address[] address) {
+		super(empNo, departmentName, First_Name, Last_Name, Date_of_Birth, Mobile_Number, Personal_Email, Work_Email, Company_Name, address);
 		setHours(hours);
 		setRate(rate);
 	}
@@ -37,21 +37,21 @@ public class HourlyEmployee extends Employee{
 		}
 	}
 
+	
+
+	@Override
 	public String toString() {
-		return "hours is : " + hours + "\nrate is : " + rate;
+		
+		return super.toString() + "HourlyEmployee [hours : "+hours+", rate : "+rate+", payment : "+getPay()+"] , ";
 	}
 
-	public double pay(double Salary) {
+	public double pay() {
 		if (hours <= 120) {
-			Salary = rate * hours;
+			return rate * hours;
 		} else {
-			double extra = hours - 120;
-			extra = extra * 1.5;
-
-			Salary = rate * (hours + extra);
-		}
-		return Salary;
+			return (hours-120)*1.5*rate+120*rate;
 	}
+		}
 	public double getPay(){
 		return pay();
 	}
