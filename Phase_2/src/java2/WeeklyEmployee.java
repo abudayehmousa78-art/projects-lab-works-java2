@@ -37,14 +37,13 @@ public class WeeklyEmployee extends Employee{
 		}
 	}
 
-	public double pay(double monthlySalary) {
-		return monthlySalary = noOfWeeks * wagePerWeek;
+	public double pay() {
+		return  noOfWeeks * wagePerWeek;
 	}
 
 	public String toString() {
-		return "no of week is : " + noOfWeeks + "\nwage per week is : " + wagePerWeek;
+		return super.toString() + "WeeklyEmployee [noOfWeeks = " + noOfWeeks + ", wagePerWeek = " + wagePerWeek + ", payment = " +pay()+ "]";
 	}
-	public double getPay(){
-		return pay();
-	}
+
+	
 }

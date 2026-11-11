@@ -42,7 +42,7 @@ public class HourlyEmployee extends Employee{
 	@Override
 	public String toString() {
 		
-		return super.toString() + "HourlyEmployee [hours : "+hours+", rate : "+rate+", payment : "+getPay()+"] , ";
+		return super.toString() + "HourlyEmployee [hours : "+hours+", rate : "+rate+", payment : "+getPay()+"]";
 	}
 
 	public double pay() {

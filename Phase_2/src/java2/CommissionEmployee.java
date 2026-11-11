@@ -41,8 +41,10 @@ public class CommissionEmployee extends Employee {
 		}
 	}
 
+
+	@Override
 	public String toString() {
-		return "totalSales is : " + totalSales + "\nprice is : " + price;
+		return super.toString() + "CommissionEmployee [totalSales=" + totalSales + ", price=" + price + ", payment = " +pay()+ "]";
 	}
 
 	public double pay() {

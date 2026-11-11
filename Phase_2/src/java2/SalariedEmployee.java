@@ -24,12 +24,17 @@ public class SalariedEmployee extends Employee{
 		}
 	}
 
-	public double pay(double monthlySalary) {
-		return monthlySalary = annualSalary / 12;
+	public double pay() {
+		return annualSalary / 12;
 	}
 
+	@Override
 	public String toString() {
-		return "annoalSalary is : " + annualSalary;
+		return super.toString() + "SalariedEmployee [annualSalary=" + annualSalary + ", payment = " +pay()+"]";
 	}
+
+	
+
+	
 
 }

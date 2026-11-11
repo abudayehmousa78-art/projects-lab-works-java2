@@ -35,7 +35,6 @@ public class Employee extends StaffMember{
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return super.toString() +" \nEmployee info [empNo = " + empNo + ", departmentName = "
 				+ departmentName +"] , ";
 	}
