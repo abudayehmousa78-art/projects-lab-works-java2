@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		ArrayList<Employee> list = new ArrayList<>();
+		ArrayList<StaffMember> list = new ArrayList<>();
 		list.add(new HourlyEmployee((short) 100, 21, "40", "mousa Debartment", "Mousa", "Saed",
 				LocalDate.of(2007, 9, 3), "059447142", "abudayehmousa78@gmail.com", "Birzeit@gmail.com", "Birzeit",
 				new Address[] { new Address("AlAmeerHassan", "Birzeit", "Palistine") }));
@@ -42,14 +42,22 @@ public class Main {
 		list.add(new ContractEmployee(900, (byte) 100, "40", "mousa Debartment", "Mousa", "Saed",
 				LocalDate.of(2007, 9, 3), "059447142", "abudayehmousa78@gmail.com", "Birzeit@gmail.com", "Birzeit",
 				new Address[] { new Address("AlAmeerHassan", "Birzeit", "Palistine") }));
+		
+		list.add(new EmployeeBasedCommission(20,50, 4, "40", "mousa Debartment", "Mousa", "Saed", LocalDate.of(2007, 9, 3),
+				"059447142", "abudayehmousa78@gmail.com", "Birzeit@gmail.com", "Birzeit",
+				new Address[] { new Address("AlAmeerHassan", "Birzeit", "Palistine") }));
+		list.add(new EmployeeBasedCommission(20,50, 4, "40", "mousa Debartment", "Mousa", "Saed", LocalDate.of(2007, 9, 3),
+				"059447142", "abudayehmousa78@gmail.com", "Birzeit@gmail.com", "Birzeit",
+				new Address[] { new Address("AlAmeerHassan", "Birzeit", "Palistine") }));
+		
 
 		printList(list);
 		System.out.println("total payment is : " + totalPayment(list));
 		System.out.println("avarag payment is :" + averagePayment(list));
-		ArrayList<Employee> above = aboveAverage(list);
+		ArrayList<StaffMember> above = aboveAverage(list);
 		System.out.println("employe  above average : ");
 		printList(above);
-		Employee top = maxPayment(list);
+		StaffMember top = maxPayment(list);
 		System.out.println("top payment : " + top);
 		System.out.println("================================");
 		System.out.println("Sorting ascending by payment : ");
@@ -57,7 +65,7 @@ public class Main {
 
 	}
 
-	public static void printList(ArrayList<Employee> list) {
+	public static void printList(ArrayList<StaffMember> list) {
 
 		for (StaffMember l : list) {
 			System.out.println("Staffmamber Info ::::" + l.toString());
@@ -66,27 +74,27 @@ public class Main {
 		}
 	}
 
-	public static double totalPayment(ArrayList<Employee> list) {
+	public static double totalPayment(ArrayList<StaffMember> list) {
 		if (list.isEmpty())
 			return 0;
 		double sum = 0;
-		for (Employee e : list) {
+		for (StaffMember e : list) {
 			sum += e.pay();
 		}
 		return sum;
 	}
 
-	public static double averagePayment(ArrayList<Employee> list) {
+	public static double averagePayment(ArrayList<StaffMember> list) {
 		if (list.isEmpty())
 			return 0;
 		return totalPayment(list) / list.size();
 	}
 
-	public static ArrayList<Employee> aboveAverage(ArrayList<Employee> list) {
+	public static ArrayList<StaffMember> aboveAverage(ArrayList<StaffMember> list) {
 
-		ArrayList<Employee> result = new ArrayList<>(list);
+		ArrayList<StaffMember> result = new ArrayList<>();
 		double average = averagePayment(list);
-		for (Employee e : list) {
+		for (StaffMember e : list) {
 			if (e.pay() > average) {
 				result.add(e);
 			}
@@ -94,13 +102,13 @@ public class Main {
 		return result;
 	}
 
-	public static Employee maxPayment(ArrayList<Employee> list) {
+	public static StaffMember maxPayment(ArrayList<StaffMember> list) {
 
 		if (list.isEmpty()) {
 			return null;
 		}
-		Employee max = list.get(0);
-		for (Employee e : list) {
+		StaffMember max = list.get(0);
+		for (StaffMember e : list) {
 			if (e.pay() > max.pay()) {
 				max = e;
 			}
@@ -108,15 +116,15 @@ public class Main {
 		return max;
 	}
 
-	public static void sortPayment(ArrayList<Employee> list) {
-		ArrayList<Employee> sort = new ArrayList<>();
-		for (Employee s : list) {
+	public static void sortPayment(ArrayList<StaffMember> list) {
+		ArrayList<StaffMember> sort = new ArrayList<>();
+		for (StaffMember s : list) {
 			sort.add(s);
 		}
 		for (int i = 0; i < sort.size(); i++) {
 			for (int j = 0; j < sort.size() - 1; j++) {
 				if (sort.get(j).pay() > sort.get(j + 1).pay()) {
-					Employee temp = sort.get(j);
+					StaffMember temp = sort.get(j);
 					sort.set(j, sort.get(j + 1));
 					sort.set(j + 1, temp);
 				}
