@@ -51,9 +51,10 @@ public class Main {
 		printList(above);
 		Employee top = maxPayment(list);
 		System.out.println("top payment : " + top);
-		
+		System.out.println("================================");
+		System.out.println("Sorting ascending by payment : ");
+		sortPayment(list);
 
-		
 	}
 
 	public static void printList(ArrayList<Employee> list) {
@@ -92,21 +93,36 @@ public class Main {
 		}
 		return result;
 	}
-	
+
 	public static Employee maxPayment(ArrayList<Employee> list) {
 
-		if(list.isEmpty()) {
+		if (list.isEmpty()) {
 			return null;
 		}
 		Employee max = list.get(0);
 		for (Employee e : list) {
-			if(e.pay() > max.pay()) {
+			if (e.pay() > max.pay()) {
 				max = e;
 			}
 		}
 		return max;
-		
+	}
+
+	public static void sortPayment(ArrayList<Employee> list) {
+		ArrayList<Employee> sort = new ArrayList<>();
+		for (Employee s : list) {
+			sort.add(s);
+		}
+		for (int i = 0; i < sort.size(); i++) {
+			for (int j = 0; j < sort.size() - 1; j++) {
+				if (sort.get(j).pay() > sort.get(j + 1).pay()) {
+					Employee temp = sort.get(j);
+					sort.set(j, sort.get(j + 1));
+					sort.set(j + 1, temp);
+				}
+			}
+		}
+		printList(sort);
 	}
 
 }
-
