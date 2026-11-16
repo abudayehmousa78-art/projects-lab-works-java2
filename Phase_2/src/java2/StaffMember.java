@@ -2,7 +2,7 @@ package java2;
 import java.time.LocalDate;
 import java.util.Random;
 
-public class StaffMember {
+public abstract class StaffMember {
 
 
 	private String First_Name;
@@ -163,9 +163,7 @@ public class StaffMember {
         return Company_Name;
     }
 
-    public double pay() {
-        return 0;
-    }
+    public abstract double pay();
 
     public String toString() {
         StringBuilder s = new StringBuilder();

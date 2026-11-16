@@ -3,7 +3,7 @@ package java2;
 import java.time.LocalDate;
 
 
-public class Employee extends StaffMember{
+public abstract class Employee extends StaffMember{
 	private String empNo;
 	private String departmentName;
 
@@ -39,9 +39,7 @@ public class Employee extends StaffMember{
 				+ departmentName +"] , ";
 	}
 
-	public double pay() {
-		return 0;
-	}
+	public abstract double pay();
 
 
 }
